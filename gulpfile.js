@@ -21,9 +21,7 @@ return gulp.src("src/sass/*.+(scss|sass)")
                 prefix: "",
                 suffix: ".min",
               }))
-            .pipe(autoprefixer({
-                cascade: false
-            }))
+            .pipe(autoprefixer())
             .pipe(cleanCSS({compatibility: 'ie8'}))
             .pipe(gulp.dest("src/css"))
             .pipe(browserSync.stream());
